@@ -4,6 +4,8 @@
 
 ## 🐶 LV1
 
+- [01 덧칠하기](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv1/01%EB%8D%A7%EC%B9%A0%ED%95%98%EA%B8%B0.Md)
+
 ## 🦊 LV2
 
 - [01 카펫](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv2/01%EC%B9%B4%ED%8E%AB.md)
