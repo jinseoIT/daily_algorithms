@@ -13,3 +13,5 @@
 ## 💻 기록한 알고리즘 목록
 
 #### [프로그래머스 목록](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/programmers.md)
+
+#### [백준 목록](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/baekjoon.md)
