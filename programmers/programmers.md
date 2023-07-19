@@ -14,5 +14,7 @@
 - [04 파일명 정렬](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv2/04%ED%8C%8C%EC%9D%BC%EB%AA%85%EC%A0%95%EB%A0%AC.md)
 - [05 귤고르기](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv2/05%EA%B7%A4%EA%B3%A0%EB%A5%B4%EA%B8%B0.md)
 - [06 기능개발 - stack/queue](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv2/06%EA%B8%B0%EB%8A%A5%EA%B0%9C%EB%B0%9C.md)
+- [07 2xn타일링 - 피보나치 수열](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv2/07%ED%83%80%EC%9D%BC%EB%A7%812xn.md)
+- [08 숫자 변환하기 - DP](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv2/08%EC%88%AB%EC%9E%90%EB%B3%80%ED%99%98%ED%95%98%EA%B8%B0.Md)
 
 ## 🦁 LV3
