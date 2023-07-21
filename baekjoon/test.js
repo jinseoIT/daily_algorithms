@@ -1,32 +1,47 @@
 const fs = require("fs");
 const filePath = process.platform === "linux" ? "/dev/stdin" : "./input.txt";
 let input = fs.readFileSync(filePath).toString().split("\n");
-const [n, m] = input[0].split(" ").map(Number);
-// 인접 리스트
-const graph = []
 
-for(let i =1; i<=n;i++) graph[i] = [];
-for(let i =1; i<n;i++){
-    const [a,b,cost] = input[i].split(" ").map(Number);
-    graph[a].push([b, cost])
-    graph[b].push([a, cost])
-}
+let line = 0;
+let caseNum = 1;
 
-let visited;
-let distance;
+while(true){
+    const [n,m] = input[line].split(' ').map(Number);
+    if(n == 0  && m == 0) break;
+    
+    const graph = [];
+    for(let i =1; i<=n;i++) graph[i] = [];
+    for(let i =1; i<=m;i++){
+      const [x,y] = input[line+i].split(' ').map(Number);
+      graph[x].push(y);
+      graph[y].push(x);
+    }
+    
+    const visited = new Array(n+1).fill(false);
+    let cnt = 0;
+    const isCycle = (x, prev) => {
+        visited[x] = true; // 방문 처리
+        // 인접 노드
+        for(let num of graph[x]){
+            // 방문하지 않았다면
+            if(!visited[num]){
+                if(isCycle(num, x)) return true;
+            }
+            // 이미 방문, 재귀 호출 노드가 전 노드가 아닐시 사이클
+            else if(num !== prev) return true;
+        }
+        return false;
+    }
 
-function dfs(x, dist){
-    if(visited[x]) return;
-    visited[x] = true // 각 노드는 한번만 방문;
-    distance[x] = dist;
-    for(let [y, cost] of graph[x]) dfs(y, dist+cost)
-}
-
-for(let i=0; i<m; i++){
-    let [x,y] = input[n+i].split(' ').map(Number);
-    visited = new Array(n+i).fill(false);
-    distance = new Array(n+i).fill(-1);
-    dfs(x, 0);    
-    console.log(distance[y]);
+    for(let i = 1; i<=n; i++){
+        if(!visited[i]) {
+            if(!isCycle(i,0)) cnt++
+        }
+    }
+    if(cnt == 0) console.log(`Case ${caseNum}: No trees.`);
+    else if (cnt == 1) console.log(`Case ${caseNum}: There is one tree.`);
+    else console.log(`Case ${caseNum}: A forest of ${cnt} trees.`);
+    line += m+1;
+    caseNum++;
 }
 
