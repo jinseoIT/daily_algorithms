@@ -14,11 +14,9 @@ for(let i =1; i<=n; i++){
         else if(row[j] == 2) chickenStores.push([i, j+1]);
     }
 }
-
-let visited = new Array(chickenStores.length).fill(false); // 치킨집 방문 확인
 let selected = [];
 let answer = 1e9
-console.log("chickenStores ::", chickenStores);
+
 function dfs(depth, start){
     if(depth === m){ // 조합 확인
         const result = [];
@@ -32,20 +30,15 @@ function dfs(depth, start){
             sum+=temp;
         }
         answer = Math.min(answer, sum)
-        console.log("answer ::", answer);
         return
     }
-    console.log(`start::::`, start)
+    
     // start 지점부터 하나씩 원소 index를 확인
     for(let i = start; i<chickenStores.length; i++){
-        if(visited[i]) continue; 
         selected.push(i); // 현재 원소 선택
-        visited[i] = true;
         dfs(depth+1, i+1);
-        console.log(`${i} 1111`, selected);
         selected.pop(); // 현재 원소 선택 취소
-        console.log(`${i} 2222`, selected);
-        visited[i] = false;
     }
 }
 dfs(0,0);
+console.log(answer)
