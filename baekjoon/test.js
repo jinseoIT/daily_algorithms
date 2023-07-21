@@ -2,46 +2,50 @@ const fs = require("fs");
 const filePath = process.platform === "linux" ? "/dev/stdin" : "./input.txt";
 let input = fs.readFileSync(filePath).toString().split("\n");
 
-let line = 0;
-let caseNum = 1;
+// n : 도시 정보 , m : 남을 치킨집 수
+const [n, m] = input[0].split(" ").map(Number);
 
-while(true){
-    const [n,m] = input[line].split(' ').map(Number);
-    if(n == 0  && m == 0) break;
-    
-    const graph = [];
-    for(let i =1; i<=n;i++) graph[i] = [];
-    for(let i =1; i<=m;i++){
-      const [x,y] = input[line+i].split(' ').map(Number);
-      graph[x].push(y);
-      graph[y].push(x);
+const chickenStores = [];
+const houses = [];
+for(let i =1; i<=n; i++){
+    const row = input[i].split(" ").map(Number);
+    for(let j = 0; j<n; j++){
+        if(row[j] == 1) houses.push([i, j+1]);
+        else if(row[j] == 2) chickenStores.push([i, j+1]);
     }
-    
-    const visited = new Array(n+1).fill(false);
-    let cnt = 0;
-    const isCycle = (x, prev) => {
-        visited[x] = true; // 방문 처리
-        // 인접 노드
-        for(let num of graph[x]){
-            // 방문하지 않았다면
-            if(!visited[num]){
-                if(isCycle(num, x)) return true;
-            }
-            // 이미 방문, 재귀 호출 노드가 전 노드가 아닐시 사이클
-            else if(num !== prev) return true;
-        }
-        return false;
-    }
-
-    for(let i = 1; i<=n; i++){
-        if(!visited[i]) {
-            if(!isCycle(i,0)) cnt++
-        }
-    }
-    if(cnt == 0) console.log(`Case ${caseNum}: No trees.`);
-    else if (cnt == 1) console.log(`Case ${caseNum}: There is one tree.`);
-    else console.log(`Case ${caseNum}: A forest of ${cnt} trees.`);
-    line += m+1;
-    caseNum++;
 }
 
+let visited = new Array(chickenStores.length).fill(false); // 치킨집 방문 확인
+let selected = [];
+let answer = 1e9
+console.log("chickenStores ::", chickenStores);
+function dfs(depth, start){
+    if(depth === m){ // 조합 확인
+        const result = [];
+        for(let i of selected) result.push(chickenStores[i])
+        let sum = 0;
+        for(let [hx,hy] of houses){
+            let temp = 1e9;
+            for(let [cx,cy] of result){
+                temp = Math.min(temp, Math.abs(hx-cx)+Math.abs(hy-cy));
+            }
+            sum+=temp;
+        }
+        answer = Math.min(answer, sum)
+        console.log("answer ::", answer);
+        return
+    }
+    console.log(`start::::`, start)
+    // start 지점부터 하나씩 원소 index를 확인
+    for(let i = start; i<chickenStores.length; i++){
+        if(visited[i]) continue; 
+        selected.push(i); // 현재 원소 선택
+        visited[i] = true;
+        dfs(depth+1, i+1);
+        console.log(`${i} 1111`, selected);
+        selected.pop(); // 현재 원소 선택 취소
+        console.log(`${i} 2222`, selected);
+        visited[i] = false;
+    }
+}
+dfs(0,0);
