@@ -2,53 +2,53 @@ const fs = require("fs");
 const filePath = process.platform === "linux" ? "/dev/stdin" : "./input.txt";
 let input = fs.readFileSync(filePath).toString().split("\n");
 
-// n 지도의 크기
-const n = Number(input[0]);
-const map = [];
-const houses = [];
+const [n, k] = input[0].split(' ').map(Number);
 
-for(let i = 1; i<=n; i++){
-    const line = input[i].split('').map(Number)    
-    map.push(line);
-    for(let j =0; j<line.length; j++){
-        // 집일 경우
-        if(line[j] == 1) houses.push([i-1,j]);
+class Queue{
+	constructor(){
+		this.items = {};
+		this.headIndex = 0;
+		this.tailIndex = 0;
+	}
+	enqueue(item){ //넣기 
+		this.items[this.tailIndex] = item;
+		this.tailIndex++;
+	}
+	dequeue(){ // 빼기
+		const item = this.items[this.headIndex];
+		delete this.items[this.headIndex];
+		this.headIndex++;
+		return item;
+	} 
+	peek(){
+		return this.items[this.headIndex]
+	}
+	getLength(){
+		return this.tailIndex - this.headIndex;
+	} 
+}
+const MAX  = 100001;
+const visited = Array.from({length: MAX}).fill(0);
+
+function bfs() {    
+    const queue = new Queue();
+    queue.enqueue(n);
+    while(queue.getLength() != 0){
+        let cur = queue.dequeue();
+        if(cur == k){ // 위치 도달
+            return visited[cur]; //최단 시간 출력
+        }  
+        for(let nxt of [cur - 1, cur + 1, cur * 2]){
+            // 공간을 벗어난 경우는 무시
+            if(nxt < 0 || nxt >= MAX) continue;
+            // 아직 방문하지 않은 위치
+            if(visited[nxt] === 0){
+                visited[nxt] = visited[cur] + 1;
+                queue.enqueue(nxt);
+            }
+        }
     }
 }
-// 방문 여부 확인 
-const visited = Array.from({length: n}, () => Array.from({length:n}, () => false));
-let cntArr = [];
-let cnt = 0;
-const dfs = (a,b) => {
-    if(visited[a][b]) return;
-    cnt++;
-    visited[a][b] = true;
-    //오른쪽 확인
-    if(b+1<n && map[a][b+1]){
-        dfs(a,b+1)
-    }
-    //왼쪽 확인
-    if(b-1>=0 && map[a][b-1]){
-        dfs(a,b-1)
-    }
-    //아래 확인
-    if(a+1<n && map[a+1][b]) {
-        dfs(a+1,b)
-    }
-    //위 확인
-    if(a-1>=0 && map[a-1][b]){
-        dfs(a-1,b)
-    }
-    return;
-}
 
-for(let i =0; i<houses.length; i++){
-    const [a,b] = houses[i];
-    if(visited[a][b]) continue;
-    cnt = 0;
-    dfs(a,b)
-    cntArr.push(cnt)
-}
+console.log(bfs())
 
-cntArr = cntArr.sort((a,b) => a-b);
-console.log(cntArr.length + '\n' + cntArr.join('\n'))
