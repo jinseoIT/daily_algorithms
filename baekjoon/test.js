@@ -2,43 +2,53 @@ const fs = require("fs");
 const filePath = process.platform === "linux" ? "/dev/stdin" : "./input.txt";
 let input = fs.readFileSync(filePath).toString().split("\n");
 
-// n : 도시 정보 , m : 남을 치킨집 수
-const [n, m] = input[0].split(" ").map(Number);
-
-const chickenStores = [];
+// n 지도의 크기
+const n = Number(input[0]);
+const map = [];
 const houses = [];
-for(let i =1; i<=n; i++){
-    const row = input[i].split(" ").map(Number);
-    for(let j = 0; j<n; j++){
-        if(row[j] == 1) houses.push([i, j+1]);
-        else if(row[j] == 2) chickenStores.push([i, j+1]);
-    }
-}
-let selected = [];
-let answer = 1e9
 
-function dfs(depth, start){
-    if(depth === m){ // 조합 확인
-        const result = [];
-        for(let i of selected) result.push(chickenStores[i])
-        let sum = 0;
-        for(let [hx,hy] of houses){
-            let temp = 1e9;
-            for(let [cx,cy] of result){
-                temp = Math.min(temp, Math.abs(hx-cx)+Math.abs(hy-cy));
-            }
-            sum+=temp;
-        }
-        answer = Math.min(answer, sum)
-        return
-    }
-    
-    // start 지점부터 하나씩 원소 index를 확인
-    for(let i = start; i<chickenStores.length; i++){
-        selected.push(i); // 현재 원소 선택
-        dfs(depth+1, i+1);
-        selected.pop(); // 현재 원소 선택 취소
+for(let i = 1; i<=n; i++){
+    const line = input[i].split('').map(Number)    
+    map.push(line);
+    for(let j =0; j<line.length; j++){
+        // 집일 경우
+        if(line[j] == 1) houses.push([i-1,j]);
     }
 }
-dfs(0,0);
-console.log(answer)
+// 방문 여부 확인 
+const visited = Array.from({length: n}, () => Array.from({length:n}, () => false));
+let cntArr = [];
+let cnt = 0;
+const dfs = (a,b) => {
+    if(visited[a][b]) return;
+    cnt++;
+    visited[a][b] = true;
+    //오른쪽 확인
+    if(b+1<n && map[a][b+1]){
+        dfs(a,b+1)
+    }
+    //왼쪽 확인
+    if(b-1>=0 && map[a][b-1]){
+        dfs(a,b-1)
+    }
+    //아래 확인
+    if(a+1<n && map[a+1][b]) {
+        dfs(a+1,b)
+    }
+    //위 확인
+    if(a-1>=0 && map[a-1][b]){
+        dfs(a-1,b)
+    }
+    return;
+}
+
+for(let i =0; i<houses.length; i++){
+    const [a,b] = houses[i];
+    if(visited[a][b]) continue;
+    cnt = 0;
+    dfs(a,b)
+    cntArr.push(cnt)
+}
+
+cntArr = cntArr.sort((a,b) => a-b);
+console.log(cntArr.length + '\n' + cntArr.join('\n'))
