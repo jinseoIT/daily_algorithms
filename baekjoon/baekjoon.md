@@ -10,6 +10,7 @@
 - [02 노드사이의 거리](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/dfs/%EB%85%B8%EB%93%9C%EC%82%AC%EC%9D%B4%EC%9D%98%20%EA%B1%B0%EB%A6%AC.md)
 - [03 트리](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/dfs/%ED%8A%B8%EB%A6%AC.md)
 - [04 치킨배달](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/dfs/%EC%B9%98%ED%82%A8%EB%B0%B0%EB%8B%AC.md)
+- [05 단지번호붙이기](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/dfs/%EB%8B%A8%EC%A7%80%EB%B2%88%ED%98%B8%EB%B6%99%EC%9D%B4%EA%B8%B0.md)
 
 ## 백준 vscode에서 동작
 
