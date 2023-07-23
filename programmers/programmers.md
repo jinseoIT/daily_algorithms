@@ -16,5 +16,6 @@
 - [06 기능개발 - stack/queue](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv2/06%EA%B8%B0%EB%8A%A5%EA%B0%9C%EB%B0%9C.md)
 - [07 2xn타일링 - 피보나치 수열](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv2/07%ED%83%80%EC%9D%BC%EB%A7%812xn.md)
 - [08 숫자 변환하기 - DP](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv2/08%EC%88%AB%EC%9E%90%EB%B3%80%ED%99%98%ED%95%98%EA%B8%B0.Md)
+- [09 스택/큐 - 스택/큐](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv2/09%EC%8A%A4%ED%83%9D%ED%81%90.md)
 
 ## 🦁 LV3
