@@ -2,74 +2,69 @@ const fs = require("fs");
 const filePath = process.platform === "linux" ? "/dev/stdin" : "./input.txt";
 let input = fs.readFileSync(filePath).toString().split("\n");
 
-let testCase = Number(input[0])
-let round = 1;
-let line = 1;
-
-class Queue {
-	constructor() {
+class Queue{
+	constructor(){
 		this.items = {};
 		this.headIndex = 0;
 		this.tailIndex = 0;
 	}
-	// 넣기
-	enqueue(item){
-	this.items[this.tailIndex] = item;
-	this.tailIndex++;
+	enqueue(item){ //넣기 
+		this.items[this.tailIndex] = item;
+		this.tailIndex++;
 	}
-	//빼기
-	dequeue(){
-	const item = this.items[this.headIndex];
-	delete this.items[this.headIndex];
-	this.headIndex++;
-	return item;
-	}
+	dequeue(){ // 빼기
+		const item = this.items[this.headIndex];
+		delete this.items[this.headIndex];
+		this.headIndex++;
+		return item;
+	} 
 	peek(){
-		return this.items[this.headIndex];
+		return this.items[this.headIndex]
 	}
-	getLength() {
+	getLength(){
 		return this.tailIndex - this.headIndex;
-	}
-
+	} 
 }
 
-// 이동할 여덟 가지 방향 정의
-const dx = [-2, -2, -1, -1, 1, 1, 2, 2];
-const dy = [-1, 1, -2, 2, -2, 2, -1, 1];
+let testCases = Number(input[0]);
+let line = 1;
 
-while(testCase--){
-	const I = Number(input[line]);
-	const current = input[line+1].split(' ').map(Number);
-	const goal = input[line+2].split(' ').map(Number);
-	const visited = Array.from({ length: I }, () => Array.from({ length: I }, () => 0));
-	
-	const dfs = () => {
-		const queue = new Queue();
-		queue.enqueue(current);
+while(testCases--){
+	// 정점의 개수(V), 간선의 개수(E)
+	const [v,e] = input[line].split(' ').map(Number);
+	const visited = Array.from({length: v+1}, () => -1)
+	const graph = Array.from({length: v+1}, () => [])
+	for(let i =1; i<=e; i++){
+		const [a,b] = input[line+i].split(' ').map(Number);
+		graph[a].push(b)
+		graph[b].push(a)
+	}
+	// 미방문: -1, 빨강: 0, 파랑 1
+	function bfs(x, graph, visited){
+		queue = new Queue();
+		queue.enqueue(x);
+		visited[x] = 0; // 처음 노드 빨간색으로 칠하기
 		while(queue.getLength() != 0){
-			let cur = queue.dequeue();
-			const [x,y] = cur;
-			// 위치 도달
-			if(x == goal[0] && y == goal[1]){
-				console.log(visited[x][y]);
-				return;
-			}
-
-			for(let i=0; i<8; i++){
-				const [nx, ny] = [x+dx[i], y+dy[i]];
-				//공간을 벗어난 경우 무시
-				if( nx < 0 || nx >= I || ny < 0 || ny >=I) continue;
-				//아직 방문하지 않았을 경우
-				if(visited[nx][ny] === 0){
-					visited[nx][ny] = visited[x][y] + 1;
-					queue.enqueue([nx, ny])
+			x = queue.dequeue();
+			for(let y of graph[x]){
+				if(visited[y] == -1){
+					visited[y] = (visited[x]+1) % 2; // 빨강 <-> 파랑
+					queue.enqueue(y);
 				}
-				
 			}
 		}
-		
 	}
-	dfs();
-	round++;
-	line+=3
+
+	function isBipartite(graph, visited){
+		for(let x =1; x < visited.length; x++){
+			for(let y of graph[x]) if(visited[x] == visited[y]) return false;
+		}
+		return true;
+	}
+	for (let i =1; i<=v; i++){ // BFS를 이용해 색칠
+		if(visited[i] == -1) bfs(i, graph, visited);
+	}
+	line+= e+1
+	if(isBipartite(graph, visited)) console.log("YES");
+	else console.log("NO");
 }
