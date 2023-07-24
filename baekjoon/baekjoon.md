@@ -17,6 +17,7 @@
 - [01 숨바꼭질](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/bfs%20/%EC%88%A8%EB%B0%94%EA%BC%AD%EC%A7%88.md)
 - [02 나이트의 이동](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/bfs%20/%EB%82%98%EC%9D%B4%ED%8A%B8%EC%9D%98%EC%9D%B4%EB%8F%99.md)
 - [03 이분그래프](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/bfs%20/%EC%9D%B4%EB%B6%84%EA%B7%B8%EB%9E%98%ED%94%84.md)
+- [04 4연산](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/bfs%20/4%EC%97%B0%EC%82%B0.md)
 
 ## 백준 vscode에서 동작
 
