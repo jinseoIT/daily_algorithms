@@ -5,6 +5,7 @@
 ## 🐶 LV1
 
 - [01 덧칠하기](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv1/01%EB%8D%A7%EC%B9%A0%ED%95%98%EA%B8%B0.Md)
+- [02 소수 만들기](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv1/02%EC%86%8C%EC%88%98%EB%A7%8C%EB%93%A4%EA%B8%B0.md)
 
 ## 🦊 LV2
 
