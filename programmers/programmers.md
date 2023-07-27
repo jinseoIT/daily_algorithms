@@ -8,6 +8,7 @@
 - [02 소수 만들기](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv1/02%EC%86%8C%EC%88%98%EB%A7%8C%EB%93%A4%EA%B8%B0.md)
 - [03 숫자 짝궁](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv1/03%EC%88%AB%EC%9E%90%EC%A7%9D%EA%B6%81.md)
 - [04 옹알이](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv1/04%EC%98%B9%EC%95%8C%EC%9D%B4.md)
+- [05 대충만든 자판](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv1/05%EB%8C%80%EC%B6%A9%EB%A7%8C%EB%93%A0%EC%9E%90%ED%8C%90.md)
 
 ## 🦊 LV2
 
