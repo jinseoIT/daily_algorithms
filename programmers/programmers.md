@@ -9,7 +9,9 @@
 - [03 숫자 짝궁](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv1/03%EC%88%AB%EC%9E%90%EC%A7%9D%EA%B6%81.md)
 - [04 옹알이](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv1/04%EC%98%B9%EC%95%8C%EC%9D%B4.md)
 - [05 대충만든 자판](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv1/05%EB%8C%80%EC%B6%A9%EB%A7%8C%EB%93%A0%EC%9E%90%ED%8C%90.md)
-- [06 크레인 인형뽑기](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv1/06%ED%81%AC%EB%A0%88%EC%9D%B8%EC%9D%B8%ED%98%95%EB%BD%91%EA%B8%B0.md)
+- [06 크레인 인형뽑기 - 2019 카카오 개발자 겨울 인턴쉽](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv1/06%ED%81%AC%EB%A0%88%EC%9D%B8%EC%9D%B8%ED%98%95%EB%BD%91%EA%B8%B0.md)
+- [07 키패드 누르기 - 2020 카카오 인턴쉽](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv1/07%ED%82%A4%ED%8C%A8%EB%93%9C%EB%88%84%EB%A5%B4%EA%B8%B0.md)
+- [08 햄버거 만들기 - stack ](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv1/08%ED%96%84%EB%B2%84%EA%B1%B0%EB%A7%8C%EB%93%A4%EA%B8%B0.md)
 
 ## 🦊 LV2
 
