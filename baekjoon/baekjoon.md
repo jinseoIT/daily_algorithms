@@ -4,6 +4,9 @@
 
 ## 📚 타입 별 정리
 
+### 이분탐색(Binary Search)
+- [01 랜선 자르기 - Silver2](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/binarySearch/%EB%9E%9C%EC%84%A0%EC%9E%90%EB%A5%B4%EA%B8%B0.md)
+
 ### DFS
 
 - [01 바이러스](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/dfs/%EB%B0%94%EC%9D%B4%EB%9F%AC%EC%8A%A4.md)
