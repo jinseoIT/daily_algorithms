@@ -12,6 +12,9 @@
 - [06 크레인 인형뽑기 - 2019 카카오 개발자 겨울 인턴쉽](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv1/06%ED%81%AC%EB%A0%88%EC%9D%B8%EC%9D%B8%ED%98%95%EB%BD%91%EA%B8%B0.md)
 - [07 키패드 누르기 - 2020 카카오 인턴쉽](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv1/07%ED%82%A4%ED%8C%A8%EB%93%9C%EB%88%84%EB%A5%B4%EA%B8%B0.md)
 - [08 햄버거 만들기 - stack ](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv1/08%ED%96%84%EB%B2%84%EA%B1%B0%EB%A7%8C%EB%93%A4%EA%B8%B0.md)
+- [09 바탕화면 정리](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv1/09%EB%B0%94%ED%83%95%ED%99%94%EB%A9%B4%EC%A0%95%EB%A6%AC.md)
+- [10 공원산책](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv1/10%EA%B3%B5%EC%9B%90%EC%82%B0%EC%B1%85.md)
+- [11 개인정보 수집 유효기간](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv1/11%EA%B0%9C%EC%9D%B8%EC%A0%95%EB%B3%B4%EC%88%98%EC%A7%91%EC%9C%A0%ED%9A%A8%EA%B8%B0%EA%B0%84.md)
 
 ## 🦊 LV2
 
