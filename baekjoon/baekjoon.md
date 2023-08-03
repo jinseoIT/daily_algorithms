@@ -22,6 +22,8 @@
 - [03 이분그래프](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/bfs%20/%EC%9D%B4%EB%B6%84%EA%B7%B8%EB%9E%98%ED%94%84.md)
 - [04 4연산](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/bfs%20/4%EC%97%B0%EC%82%B0.md)
 - [05 경쟁적 전염](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/bfs%20/%EA%B2%BD%EC%9F%81%EC%A0%81%EC%A0%84%EC%97%AD.md)
+- [06 환승 - Gold2](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/bfs%20/%ED%99%98%EC%8A%B9.md)
+- [07 결혼식 - Silver2](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/bfs%20/%EA%B2%B0%ED%98%BC%EC%8B%9D.md)
 
 ## 백준 vscode에서 동작
 
