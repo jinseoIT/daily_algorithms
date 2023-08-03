@@ -2,57 +2,51 @@ const fs = require("fs");
 const filePath = process.platform === "linux" ? "/dev/stdin" : "./input.txt";
 let input = fs.readFileSync(filePath).toString().split("\n");
 
-class Queue{
-	constructor(){
+class Queue {
+	constructor() {
 		this.items = {};
 		this.headIndex = 0;
 		this.tailIndex = 0;
 	}
-	enqueue(item){ //넣기 
+	enqueue(item) {
 		this.items[this.tailIndex] = item;
 		this.tailIndex++;
 	}
-	dequeue(){ // 빼기
+	dequeue() {
 		const item = this.items[this.headIndex];
-		delete this.items[this.headIndex];
 		this.headIndex++;
 		return item;
-	} 
-	peek(){
-		return this.items[this.headIndex]
 	}
 	getLength(){
 		return this.tailIndex - this.headIndex;
-	} 
+	}
 }
-const [n, m, k, x] = input[0].split(' ').map(Number);
+// n: 역의 갯수, 하이퍼튜브당 연결 갯수 k, 하이퍼 튜브 개수 m
+const [n, k, m] = input[0].split(' ').map(Number);
+let graph = Array.from({length: n+1}, () => []);
+for(let i = 1; i<=m; i++){
+	const nums = input[i].split(' ').map(Number);
+	for(let j = 0; j< nums.length; j++){
+		graph[nums[j]].push(...nums.slice(j+1, nums.length))
+	}
+}
+const queue = new Queue();
+const visited = new Array(n+1).fill(0);
 
-// 도시 정보
-const graph = Array.from({length:n+1}, () => []);
-const visited = new Array(n+1).fill(-1);
-for(let i =1; i<=m; i++){
-	const [x,y] = input[i].split(' ').map(Number);
-	graph[x].push(y);
-	// graph[y].push(x);
+graph = graph.map(arr => [...new Set(arr)])
+
+for(const num of graph[1]){
+	queue.enqueue(num);
+	visited[num] = 2;
 }
-console.log("graph ::",graph);
-const queue = new Queue
-visited[x] = 0;
-queue.enqueue(x)
+
 while(queue.getLength() > 0){
-	const now = queue.dequeue()
-	for(let nextNode of graph[now]){
-		if(visited[nextNode] == -1){
-			visited[nextNode] = visited[now]+1;
-			queue.enqueue(nextNode)
+	const num = queue.dequeue();
+	for(const n of graph[num]){
+		if(!visited[n]){
+			visited[n] = visited[num] + 1;
+			queue.enqueue(n);
 		}
 	}
 }
-let check = false;
-for(let i = 1; i<=n; i++){
-	if(visited[i] == k){
-		console.log(i);
-		check = true;
-	}
-}
-if(!check) console.log(-1);
+console.log(visited[9] ? visited[9] : -1);
