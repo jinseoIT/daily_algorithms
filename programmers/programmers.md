@@ -23,9 +23,12 @@
 - [03 N개의 최소 공배수](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv2/03N%EA%B0%9C%EC%9D%98%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98.md)
 - [04 파일명 정렬](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv2/04%ED%8C%8C%EC%9D%BC%EB%AA%85%EC%A0%95%EB%A0%AC.md)
 - [05 귤고르기](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv2/05%EA%B7%A4%EA%B3%A0%EB%A5%B4%EA%B8%B0.md)
-- [06 기능개발 - stack/queue](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv2/06%EA%B8%B0%EB%8A%A5%EA%B0%9C%EB%B0%9C.md)
+- [06 기능개발 - 스택/큐](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv2/06%EA%B8%B0%EB%8A%A5%EA%B0%9C%EB%B0%9C.md)
 - [07 2xn타일링 - 피보나치 수열](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv2/07%ED%83%80%EC%9D%BC%EB%A7%812xn.md)
 - [08 숫자 변환하기 - DP](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv2/08%EC%88%AB%EC%9E%90%EB%B3%80%ED%99%98%ED%95%98%EA%B8%B0.Md)
 - [09 스택/큐 - 스택/큐](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv2/09%EC%8A%A4%ED%83%9D%ED%81%90.md)
-
+- [10 전화번호 목록 - 해시](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv2/10%EC%A0%84%ED%99%94%EB%B2%88%ED%98%B8%EB%AA%A9%EB%A1%9D.md)
+- [11 더 맵게 - 힙](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv2/11%EB%8D%94%EB%A7%B5%EA%B2%8C.md)
+- [12 주식가격 - 스택/큐](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv2/12%EC%A3%BC%EC%8B%9D%EA%B0%80%EA%B2%A9.md)
+- [13 모음사전 - dfs](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv2/13%EB%AA%A8%EC%9D%8C%EC%82%AC%EC%A0%84.md)
 ## 🦁 LV3
