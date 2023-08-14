@@ -31,4 +31,11 @@
 - [11 더 맵게 - 힙](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv2/11%EB%8D%94%EB%A7%B5%EA%B2%8C.md)
 - [12 주식가격 - 스택/큐](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv2/12%EC%A3%BC%EC%8B%9D%EA%B0%80%EA%B2%A9.md)
 - [13 모음사전 - dfs](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv2/13%EB%AA%A8%EC%9D%8C%EC%82%AC%EC%A0%84.md)
+- [14 다리를 지나는 트럭](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv2/14%EB%8B%A4%EB%A6%AC%EB%A5%BC%EC%A7%80%EB%82%98%EB%8A%94%ED%8A%B8%EB%9F%AD.md)
+- [15 롤케이크 자르기](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv2/15%EB%A1%A4%EC%BC%80%EC%9D%B4%ED%81%AC%20%EC%9E%90%EB%A5%B4%EA%B8%B0.md)
+- [16 2개 이하로 다른 비트](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv2/16%EB%91%90%EA%B0%9C%EC%9D%B4%ED%95%98%EB%A1%9C%EB%8B%A4%EB%A5%B8%EB%B9%84%ED%8A%B8.md#2%EA%B0%9C-%EC%9D%B4%ED%95%98%EB%A1%9C-%EB%8B%A4%EB%A5%B8-%EB%B9%84%ED%8A%B8)
+- [17 가장 큰 수](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv2/17%EA%B0%80%EC%9E%A5%EC%9D%80%EC%88%98.md)
+- [18 택배상자](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv2/18%ED%83%9D%EB%B0%B0%EC%83%81%EC%9E%90.md)
+- [19 124 나라의 숫자](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv2/19%EC%9D%BC%EC%9D%B4%EC%82%AC%EB%82%98%EB%9D%BC%EC%9D%98%EC%88%AB%EC%9E%90.md)
+- [20 큰 수 만들기](https://github.com/jinseoIT/daily_algorithms/blob/main/programmers/lv2/20%ED%81%B0%EC%88%98%EB%A7%8C%EB%93%A4%EA%B8%B0.Md)
 ## 🦁 LV3
