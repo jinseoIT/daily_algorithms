@@ -1,50 +1,26 @@
 const fs = require("fs");
 const filePath = process.platform === "linux" ? "/dev/stdin" : "./input.txt";
-let input = fs.readFileSync(filePath).toString().split("\n");
+let input = fs.readFileSync(filePath).toString().trim().split("\n");
 
-class Queue {
-	constructor() {
-		this.items = {};
-		this.headIndex = 0;
-		this.tailIndex = 0;
-	}
-	enqueue(item) {
-		this.items[this.tailIndex] = item;
-		this.tailIndex++;
-	}
-	dequeue() {
-		const item = this.items[this.headIndex];
-		this.headIndex++; 
-		return item;
-	}
-	getLength(){
-		return this.tailIndex - this.headIndex;
-	}
+const N = Number(input.shift());
+input = input.map(item=>+item);
+let stack =[]
+let result=''
+let j = 1
+
+for(let i=0; i<N; i++){
+    
+    while(j<=input[i]){
+        stack.push(j);        
+        result +='+ ';
+        j++;
+    }
+	console.log('stack ::', stack);
+    let num = stack.pop();
+    if(num !== input[i]){
+        result = "NO";
+        break;
+    }
+    result +='- ' 
 }
-
-const [A, B] = input[0].split(" ");
-
-const queue = new Queue();
-queue.enqueue([A, 0]) // (값, 최소 연산 횟수) 삽입
-let visited = new Set();
-let found = false;
-
-while(queue.getLength() > 0){
-	let [value, dist] = queue.dequeue();
-	if(value > 1e9) continue; // 범위를 벗어나는 경우
-	if(value == B){ // 목표 값에 도달한 경우
-		console.log(dist+1); // 최소 연산 횟수 + 1 출력
-		found = true;
-		break;
-	}
-	for(let oper of ['*', '+']){
-		let nextValue = value;
-		if(oper == '*') nextValue *= 2; // 2를 곱하기;
-		if(oper == '+') nextValue = nextValue*10 + 1;
-		if((!visited.has(nextValue))){
-			queue.enqueue([nextValue, dist+1]);
-			visited.add(nextValue);
-		}
-	}
-}
-if(!found) console.log(-1); // 바꿀 수 없는 경우;
+console.log(result.split(' ').join('\n'))
