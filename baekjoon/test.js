@@ -2,25 +2,10 @@ const fs = require("fs");
 const filePath = process.platform === "linux" ? "/dev/stdin" : "./input.txt";
 let input = fs.readFileSync(filePath).toString().trim().split("\n");
 
-const N = Number(input.shift());
-input = input.map(item=>+item);
-let stack =[]
-let result=''
-let j = 1
+const [N, A, M, B] = input.map(v=> v.split(' '));
 
-for(let i=0; i<N; i++){
-    
-    while(j<=input[i]){
-        stack.push(j);        
-        result +='+ ';
-        j++;
-    }
-	console.log('stack ::', stack);
-    let num = stack.pop();
-    if(num !== input[i]){
-        result = "NO";
-        break;
-    }
-    result +='- ' 
-}
-console.log(result.split(' ').join('\n'))
+const array = new Set(A);
+
+const result = B.map(v=> array.has(v) ? 1 : 0); 
+
+console.log(result.join('\n'));
