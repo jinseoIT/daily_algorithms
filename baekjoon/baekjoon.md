@@ -6,6 +6,7 @@
 
 ### 이분탐색(Binary Search)
 - [01 랜선 자르기 - Silver2](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/binarySearch/%EB%9E%9C%EC%84%A0%EC%9E%90%EB%A5%B4%EA%B8%B0.md)
+- [02 수 찾기 - Silver4](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/binarySearch/%EC%88%98%20%EC%B0%BE%EA%B8%B0.md)
 
 ### DFS
 
@@ -24,6 +25,8 @@
 - [05 경쟁적 전염](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/bfs%20/%EA%B2%BD%EC%9F%81%EC%A0%81%EC%A0%84%EC%97%AD.md)
 - [06 환승 - Gold2](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/bfs%20/%ED%99%98%EC%8A%B9.md)
 - [07 결혼식 - Silver2](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/bfs%20/%EA%B2%B0%ED%98%BC%EC%8B%9D.md)
+- [08 치즈 - Gold3](https://www.acmicpc.net/problem/2638)
+- [09 A에서B - Silver2](https://www.acmicpc.net/problem/16953)
 
 ## 백준 vscode에서 동작
 
