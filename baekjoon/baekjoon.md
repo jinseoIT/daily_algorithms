@@ -25,8 +25,10 @@
 - [05 경쟁적 전염](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/bfs%20/%EA%B2%BD%EC%9F%81%EC%A0%81%EC%A0%84%EC%97%AD.md)
 - [06 환승 - Gold2](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/bfs%20/%ED%99%98%EC%8A%B9.md)
 - [07 결혼식 - Silver2](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/bfs%20/%EA%B2%B0%ED%98%BC%EC%8B%9D.md)
-- [08 치즈 - Gold3](https://www.acmicpc.net/problem/2638)
-- [09 A에서B - Silver2](https://www.acmicpc.net/problem/16953)
+- [08 치즈 - Gold3](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/bfs%20/%EC%B9%98%EC%A6%88.md)
+- [09 A에서B - Silver2](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/bfs%20/A%EC%97%90%EC%84%9CB.md)
+- [10 인구이동 - Gold4](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/bfs%20/%EC%9D%B8%EA%B5%AC%EC%9D%B4%EB%8F%99.md)
+- [11 뱀 - Gold4](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/bfs%20/%EB%B1%80.md)
 
 ## 백준 vscode에서 동작
 
