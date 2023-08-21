@@ -30,6 +30,9 @@
 - [10 인구이동 - Gold4](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/bfs%20/%EC%9D%B8%EA%B5%AC%EC%9D%B4%EB%8F%99.md)
 - [11 뱀 - Gold4](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/bfs%20/%EB%B1%80.md)
 
+### DP
+- [01 피보나치 함수 - Silver3](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/dp/01%ED%94%BC%EB%AA%A8%EB%82%98%EC%B9%98%ED%95%A8%EC%88%98.md)
+
 ## 백준 vscode에서 동작
 
 ```javascript
