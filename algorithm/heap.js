@@ -1,6 +1,6 @@
 class MinHeap {
     constructor() {
-      this.items = [1];
+      this.items = [];
     }
 
     size() {
