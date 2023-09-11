@@ -32,6 +32,10 @@
 
 ### DP
 - [01 피보나치 함수 - Silver3](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/dp/01%ED%94%BC%EB%AA%A8%EB%82%98%EC%B9%98%ED%95%A8%EC%88%98.md)
+- [02 타일 - Silver3](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/dp/02%ED%83%80%EC%9D%BC.md)
+- [03 포도주 시식 - Silver1](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/dp/03%ED%8F%AC%EB%8F%84%EC%A3%BC%EC%8B%9C%EC%8B%9D.md)
+- [04 파도반 수열 - Silver3](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/dp/04%ED%8C%8C%EB%8F%84%EB%B0%98%EC%88%98%EC%97%B4.md)
+- [05 정수 삼각형 - Silver1](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/dp/05%EC%A0%95%EC%88%98%EC%82%BC%EA%B0%81%ED%98%95.md)
 
 ## 백준 vscode에서 동작
 
