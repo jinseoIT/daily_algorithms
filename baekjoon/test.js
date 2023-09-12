@@ -2,31 +2,28 @@ const fs = require("fs");
 const filePath = process.platform === "linux" ? "/dev/stdin" : "./input.txt";
 let input = fs.readFileSync(filePath).toString().trim().split("\n");
 
-const n = Number(input[0]); 
-const m = Number(input[1]); 
-
-let d = new Array(50).fill(0)
+let [n, m, h] = input[0].split(' ').map(Number);
+let a = [];
+let d = new Array(h + 1).fill(0);
+for(let i = 1; i <= n; i++){
+    a.push(input[i].split(' ').map(Number));
+}
 d[0] = 1;
-d[1] = 1;
-d[2] = 2;
-
-// 다이나믹 프로그래밍 수행 (피보나치 수열)
-function dp(x) {
-    if(d[x] != 0 ) return d[x];
-    d[x] = dp(x - 1) + dp(x - 2);
-    return d[x];
+// 모든 학생에 대하여 처리
+for(let i = 0; i < n; i++){
+    let data = [];
+    // 0부터 h까지의 모든 높이에 대하여 처리
+    for(j = 0; j <= h; j++){
+        for(let k = 0; k < a.length; k++){ // 각 학생을 확인하며
+            // 현재 학생의 블록으로 특정 높이의 탑을 쌓을 수 있는 경우
+            if(d[j] != 0 && j + a[i][k] <= h){
+                data.push([j+a[i][k], d[j]]);
+            }
+        }
+    }
+    // 쌓을 수 있는 높이에 대하여, 경우의 수 증가
+    for([height, value] of data){
+        d[height] = (d[height] + value) % 10007;
+    }
 }
-
-// VIP 좌석을 기준으로 몇 개씩 묶이는지 확인
-let arr = [];
-let start = 0;
-for (let i = 2; i < m + 2; i++){
-    end = Number(input[i]);
-    arr.push(end - 1 - start);
-    start = end;
-}
-arr.push(n - start);
-// 각 묶음의 개수에 대하여 DP 테이블의 값 가져오기
-let res = 1;
-for(let x of arr) res *= dp(x);
-console.log(res);
+console.log(d[h]);
