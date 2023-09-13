@@ -2,28 +2,22 @@ const fs = require("fs");
 const filePath = process.platform === "linux" ? "/dev/stdin" : "./input.txt";
 let input = fs.readFileSync(filePath).toString().trim().split("\n");
 
-let [n, m, h] = input[0].split(' ').map(Number);
-let a = [];
-let d = new Array(h + 1).fill(0);
-for(let i = 1; i <= n; i++){
-    a.push(input[i].split(' ').map(Number));
-}
-d[0] = 1;
-// 모든 학생에 대하여 처리
-for(let i = 0; i < n; i++){
-    let data = [];
-    // 0부터 h까지의 모든 높이에 대하여 처리
-    for(j = 0; j <= h; j++){
-        for(let k = 0; k < a.length; k++){ // 각 학생을 확인하며
-            // 현재 학생의 블록으로 특정 높이의 탑을 쌓을 수 있는 경우
-            if(d[j] != 0 && j + a[i][k] <= h){
-                data.push([j+a[i][k], d[j]]);
-            }
+let n = Number(input[0]);
+let arr = input[1].split(' ').map(Number);
+
+// 순서를 뒤집어 '최강 증가 부분 수열' 문제로 변환
+arr.reverse();
+
+// 다이나믹 프로그래밍을 위한 1차원 DP 테이블 초기화
+dp = new Array(n).fill(1);
+
+// 가장 긴 증가하는 부분 수열(LIS) 알고리즘 수행
+for(let i = 1; i < n; i++){
+    for(let j = 0; j < i; j++){
+        if(arr[j] < arr[i]){
+            dp[i] = Math.max(dp[i], dp[j] + 1);
         }
     }
-    // 쌓을 수 있는 높이에 대하여, 경우의 수 증가
-    for([height, value] of data){
-        d[height] = (d[height] + value) % 10007;
-    }
 }
-console.log(d[h]);
+// 열외해야 하는 병사의 최소 수를 출력
+console.log(n - Math.max(...dp));
