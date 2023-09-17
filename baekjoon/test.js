@@ -2,17 +2,34 @@ const fs = require("fs");
 const filePath = process.platform === "linux" ? "/dev/stdin" : "./input.txt";
 let input = fs.readFileSync(filePath).toString().trim().split("\n");
 
-let n = Number(input[0]);
-let d = new Array(n + 1).fill(0);
+// 우선순위 먼저
+// 우선순위가 같다면 Queue의 가장 뒤에 재배치 한다
+function solution(priorities, location){
+    let answer = 0;
+    let queue = priorities;
+    let indexArr = Array.from({length: queue.length}, (v,i) => i);
+    indexArr[location] = 'target';
 
-for(let x = 2; x <=n; x++){
-    d[x] = d[x-1]; // 1을 빼기
-    if(x % 2 == 0) {
-        d[x] = Math.min(d[x], d[parseInt(x/2)]);// 2로 나누기
+    while(1){
+        if(queue[0] === Math.max(...queue)){
+            answer +=1;
+            if(indexArr[0] === 'target'){
+                break;
+            } else {
+                queue.shift();
+                indexArr.shift();
+            }
+        } else {
+            queue.push(queue.shift());
+            indexArr.push(indexArr.shift());
+        }
     }
-    if(x % 3 == 0){
-        d[x] = Math.min(d[x], d[parseInt(x/3)]); // 3으로 나누기
-    }
-    d[x]++;
+    return answer;
 }
-console.log(d[n]);
+
+let n = Number(input[0]);
+for(let i = 1; i<= n*2; i+=2){
+    const [num, target] = input[i].split(' ').map(Number);
+    const priorities = input[i+1].split(' ').map(Number);
+    console.log(solution(priorities, target))
+}
