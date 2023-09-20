@@ -36,6 +36,7 @@
 - [03 포도주 시식 - Silver1](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/dp/03%ED%8F%AC%EB%8F%84%EC%A3%BC%EC%8B%9C%EC%8B%9D.md)
 - [04 파도반 수열 - Silver3](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/dp/04%ED%8C%8C%EB%8F%84%EB%B0%98%EC%88%98%EC%97%B4.md)
 - [05 정수 삼각형 - Silver1](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/dp/05%EC%A0%95%EC%88%98%EC%82%BC%EA%B0%81%ED%98%95.md)
+- [06 연속 부분 최대곱 - Silver4](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/dp/06%EC%97%B0%EC%86%8D%EB%B6%80%EB%B6%84%EC%B5%9C%EB%8C%80%EA%B3%B1.md)
 
 ## 백준 vscode에서 동작
 
