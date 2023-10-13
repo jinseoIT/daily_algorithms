@@ -5,6 +5,7 @@
 ## 📚 타입 별 정리
 
 ### 이분탐색(Binary Search)
+
 - [01 랜선 자르기 - Silver2](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/binarySearch/%EB%9E%9C%EC%84%A0%EC%9E%90%EB%A5%B4%EA%B8%B0.md)
 - [02 수 찾기 - Silver4](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/binarySearch/%EC%88%98%20%EC%B0%BE%EA%B8%B0.md)
 
@@ -15,6 +16,7 @@
 - [03 트리](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/dfs/%ED%8A%B8%EB%A6%AC.md)
 - [04 치킨배달](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/dfs/%EC%B9%98%ED%82%A8%EB%B0%B0%EB%8B%AC.md)
 - [05 단지번호붙이기](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/dfs/%EB%8B%A8%EC%A7%80%EB%B2%88%ED%98%B8%EB%B6%99%EC%9D%B4%EA%B8%B0.md)
+- [06 적록색약](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/dfs/%EC%A0%81%EB%A1%9D%EC%83%89%EC%95%BD.md)
 
 ### BFS
 
@@ -31,6 +33,7 @@
 - [11 뱀 - Gold4](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/bfs%20/%EB%B1%80.md)
 
 ### DP
+
 - [01 피보나치 함수 - Silver3](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/dp/01%ED%94%BC%EB%AA%A8%EB%82%98%EC%B9%98%ED%95%A8%EC%88%98.md)
 - [02 타일 - Silver3](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/dp/02%ED%83%80%EC%9D%BC.md)
 - [03 포도주 시식 - Silver1](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/dp/03%ED%8F%AC%EB%8F%84%EC%A3%BC%EC%8B%9C%EC%8B%9D.md)
