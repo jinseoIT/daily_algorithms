@@ -1,6 +1,6 @@
-5
-RRRBB
-GGBBB
-BBBRR
-BBRRR
-RRRRR
+6 5
+1 2
+2 5
+5 1
+3 4
+4 6
