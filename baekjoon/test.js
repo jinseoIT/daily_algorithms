@@ -1,31 +1,51 @@
 const fs = require("fs");
 const filePath = process.platform === "linux" ? "/dev/stdin" : "./input.txt";
 let input = fs.readFileSync(filePath).toString().trim().split("\n");
-// n 정점 m 간선
-const [n, m] = input[0].split(' ').map(Number);
+let currentLine = 0;
 
-const visited = Array(n+1).fill(false);
-const graph = Array.from({length:n+1}, () => [])
+// 우 하 좌 상 대각선*4
+const position = [[1,0],[0,1],[-1,0],[0,-1],[1,1],[-1,1],[-1,-1],[1,-1]];
 
-for(let i = 1; i<=m; i++){
-  const [a, b] = input[i].split(' ');
-  graph[a].push(b);
-  graph[b].push(a);
+const isOverRange = ([x,y],[h,w]) => {
+  if(x < 0 || y < 0 || x > h || y > w) return true;
+  return false
 }
 
-const dfs = (node) => {
-  if(visited[node]) return;
-  visited[node] = true;
-  for(target of graph[node]){
-    dfs(target);
+while(true){
+  // w : 지도 넓이 , h : 지도 높이
+  const [mapW, mapH] = input[currentLine].split(' ').map(Number);
+  const [w, h] = [mapW - 1 , mapH -1];
+  currentLine++;
+
+  const map = [];
+  for(let i = 0; i<mapH; i++) {
+    const row = input[currentLine].split(' ').map(Number);
+    map.push(row);
+    currentLine++;
   }
-}
 
-let cnt = 0;
-for(let i = 1; i<=n; i++){
-  if(visited[i]) continue;
-  dfs(i);
-  cnt ++;
-}
+  const visited = Array.from({length: mapH}, () => Array(mapW).fill(false));
+  const dfs = (x,y) => {
+    if(visited[x][y]) return; 
+    visited[x][y] = true;
+    if(!map[x][y]) return;
+    for([cx, cy] of position){
+      const [nx, ny] = [x+cx, y+cy];
+      if(!isOverRange([nx,ny],[h,w])){
+        dfs(nx,ny)
+      }
+    }
+  }
 
-console.log(cnt);
+  let cnt = 0;
+  for(let i=0; i<mapH; i++){
+    for(let j=0; j<mapW; j++){
+      if(visited[i][j] || !map[i][j]) continue;
+      dfs(i, j);
+      cnt ++;
+    }
+  }
+  
+  if(mapW == 0 && mapH == 0) break;
+  console.log(cnt);
+}
