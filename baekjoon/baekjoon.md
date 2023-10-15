@@ -18,6 +18,7 @@
 - [05 단지번호붙이기](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/dfs/%EB%8B%A8%EC%A7%80%EB%B2%88%ED%98%B8%EB%B6%99%EC%9D%B4%EA%B8%B0.md)
 - [06 적록색약 - Gold5](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/dfs/%EC%A0%81%EB%A1%9D%EC%83%89%EC%95%BD.md)
 - [07 연결 요소의 개수 - Silver2](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/dfs/%EC%97%B0%EA%B2%B0%20%EC%9A%94%EC%86%8C%EC%9D%98%20%EA%B0%9C%EC%88%98.md)
+- [08 섬의 개수 - Silver2](https://github.com/jinseoIT/daily_algorithms/blob/main/baekjoon/dfs/%EC%84%AC%EC%9D%98%EA%B0%9C%EC%88%98.md)
 
 ### BFS
 
