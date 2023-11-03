@@ -1,39 +1,24 @@
 const fs = require("fs");
 const filePath = process.platform === "linux" ? "/dev/stdin" : "./input.txt";
 let input = fs.readFileSync(filePath).toString().trim().split("\n");
-const cardCount = Number(input[0]);
-class Queue {
-  constructor() {
-    this.items = {};
-    this.headIndex = 0;
-    this.tailIndex = 0;
-  }
-  enqueue(item){
-    this.items[this.tailIndex] = item;
-    this.tailIndex++;
-  }
-  dequeue(){
-    const item = this.items[this.headIndex];
-    delete this.items[this.headIndex];
-    this.headIndex++;
-    return item;
-  }
-  peek() {
-    return this.item[this.headIndex];
-  }
-  getLength() {
-    return this.tailIndex - this.headIndex;
-  }
-}
-const cards = new Queue();
-for(let i = 1; i<=cardCount; i++){
-  cards.enqueue(i);
-}
-while(cards.getLength() > 1){
-  cards.dequeue();
-  const card = cards.dequeue();
-  cards.enqueue(card);
-}
-console.log(cards.dequeue());
+// N : 제곱정수, r : 행 c : 열
+const [N, r ,c] = input[0].split(" ").map(Number);
 
+let res = 0;
+const divide = (row, col, size) => {
+  if (row === r && col === c) {
+    // 해당 좌표
+    console.log(res);
+    return;
+  }
+  if (r >= row && r < row + size && c >= col && c < col + size) {
+    // 영역 해당
+    size = parseInt(size / 2);
+    divide(row, col, size);
+    divide(row, col + size, size);
+    divide(row + size, col, size);
+    divide(row + size, col + size, size);
+  } else res += size * size; // 영역 이외
+};
 
+divide(0, 0, Math.pow(2, N));
