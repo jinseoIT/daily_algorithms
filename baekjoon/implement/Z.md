@@ -44,13 +44,13 @@ const divide = (row, col, size) => {
     return;
   }
   if (r >= row && r < row + size && c >= col && c < col + size) {
-    // 영역 해당
+    // 찾으려는 행과 열이 4분면에 있을 경우
     size = parseInt(size / 2);
-    divide(row, col, size);
-    divide(row, col + size, size);
-    divide(row + size, col, size);
-    divide(row + size, col + size, size);
-  } else res += size * size; // 영역 이외
+    divide(row, col, size); // 1사분면 탐색
+    divide(row, col + size, size); // 2사분면 탐색
+    divide(row + size, col, size); // 3사분면 탐색
+    divide(row + size, col + size, size); // 4사분면 탐색
+  } else res += size * size; // 정사각형 넓이만큼 카운터 추가
 };
 
 divide(0, 0, Math.pow(2, N));
