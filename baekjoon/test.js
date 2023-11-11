@@ -35,14 +35,14 @@ for(let i = 1; i<=M; i++){
   graph[B].push(A)
 }
 
-const bfs = (node) => {
+const bfs = (start) => {
   const queue = new Queue();
   const visited = Array(N+1).fill(0);
-  queue.enqueue([node,0]);
+  queue.enqueue([start,0]);
   while(queue.getLength()){
     const [current, distance] = queue.dequeue();
     for(const B of graph[current]){
-      if(!visited[B] && B !== node){
+      if(!visited[B]){
         visited[B] = distance+1;
         queue.enqueue([B, distance+1]);
       } 
@@ -50,16 +50,14 @@ const bfs = (node) => {
   }
   return visited.reduce((acc, curr) => acc+curr);
 }
-const score = {};
-for(let i = 1; i<=N; i++){
-  score[i] = bfs(i);
+let minScore = Number.MAX_VALUE;
+let answer = -1;
+for(let i = 1; i <= N; i++){
+  const score = bfs(i);
+  if (score < minScore) {
+    minScore = score;
+    answer = i;
+  }
 }
-const answer = Object.entries(score).sort((a,b) => {
-  if(a[1] < b[1]) return -1;
-  if(a[1] > b[1]) return 1;
-  if(a[0] < b[0]) return -1;
-  if(a[0] > b[0]) return 1;
-  return 0
-})[0][0]
 
 console.log(answer);
